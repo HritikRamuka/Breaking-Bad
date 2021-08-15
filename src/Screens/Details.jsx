@@ -5,12 +5,14 @@ import { getQuotes } from '../components/Api'
 import "./Details.css"
 const Details = () => {
     const{id} =  useParams()
-
+ 
 
 const[details,setDetails] = useState([
 
 {}])
-const [ quotes,setQuotes] = useState([{}])
+const [ quotes,setQuotes] = useState({
+    
+})
 
 
 useEffect(()=>{
@@ -20,12 +22,15 @@ getDetails(id)
       setDetails(data)
       console.log(data)
   })
-  getQuotes(id)
-     .then((data)=>{
-         setQuotes(data)
-         console.log(data)
-     })
+ 
 
+},[id])
+
+useEffect(()=>{
+    getQuotes(id)
+    .then((data)=>{
+       setQuotes(data)
+    })
 },[id])
 
 
@@ -53,7 +58,7 @@ console.log(mapped);
                <h5>Nickname: {details[0].nickname}</h5>
                <h5>Status: {details[0].status}</h5>
                <h5>Appearance: {mapped}</h5>
-               <p className="quotes"><i class="fas fa-quote-left"></i> {quotes[0].quote} <i class="fas fa-quote-right"></i>   </p>
+               <p className="quotes"><i class="fas fa-quote-left"></i> {quotes.quote} <i class="fas fa-quote-right"></i>   </p>
                </div>
            </div>
            
