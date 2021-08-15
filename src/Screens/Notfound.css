@@ -1,0 +1,9 @@
+.error {
+  display: flex;
+  height: 75vh;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-weight: bolder;
+}

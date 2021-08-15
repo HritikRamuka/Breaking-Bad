@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import {useParams,Link} from  "react-router-dom"
 import { getDetails } from '../components/Api'
 import { getQuotes } from '../components/Api'
+
 import "./Details.css"
 const Details = () => {
     const{id} =  useParams()
@@ -10,9 +11,7 @@ const Details = () => {
 const[details,setDetails] = useState([
 
 {}])
-const [ quotes,setQuotes] = useState({
-    
-})
+const [ quotes,setQuotes] = useState([{}])
 
 
 useEffect(()=>{
@@ -58,7 +57,8 @@ console.log(mapped);
                <h5>Nickname: {details[0].nickname}</h5>
                <h5>Status: {details[0].status}</h5>
                <h5>Appearance: {mapped}</h5>
-               <p className="quotes"><i class="fas fa-quote-left"></i> {quotes.quote} <i class="fas fa-quote-right"></i>   </p>
+               <p className="quotes"><i class="fas fa-quote-left"></i> {quotes[0].quote} <i class="fas fa-quote-right"></i>   </p>
+               
                </div>
            </div>
            
