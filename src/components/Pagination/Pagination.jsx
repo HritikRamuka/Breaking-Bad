@@ -13,6 +13,7 @@ const Pagination = ({ charsPerPage, totalChars, paginate }) => {
       <ul className='pagination'>
         {pageNumbers.map(number => (
           <li style={{width:"50px",marginLeft:"5px"}}key={number} id={number} className='page-item'>
+            
             <a onClick={()=>paginate(number)} href="#3" className='page-link'> 
               {number}</a>
             
@@ -25,3 +26,4 @@ const Pagination = ({ charsPerPage, totalChars, paginate }) => {
 };
 
 export default Pagination;
+

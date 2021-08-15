@@ -10,9 +10,10 @@ const Home = () => {
     const [loading,setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1);
     const [charsPerPage] = useState(10);
+    
 
     
-       // Get current posts
+      //  Get current posts
   const indexOfLastChar = currentPage * charsPerPage;
   const indexOfFirstChar = indexOfLastChar - charsPerPage;
   const currentChars = chars.slice(indexOfFirstChar, indexOfLastChar);
@@ -28,17 +29,22 @@ const Home = () => {
             setChars(data)
             setLoading(false)
             console.log({data})
+            
           })
       },[])
+
+    
     return (
         <div>
-             <List 
+             <List
                 loading={loading}
-                 chars={currentChars}/>
+                 chars={currentChars}
+                />
             <Pagination
                charsPerPage={charsPerPage}
                 totalChars={chars.length}
                 paginate={paginate}
+              
       /> 
         </div>
     )

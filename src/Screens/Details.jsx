@@ -47,13 +47,13 @@ console.log(mapped);
            <div className="card">
                <img src={details[0].img} alt="" />
                <div className="info">
-               <h2> Name: {details[0].name}</h2>
+               <h3> Name: {details[0].name}</h3>
                <h4>DOB: {details[0].birthday}</h4>
-               <h4>Occupation: {occupations}</h4>
+               <h5>Occupation: {occupations}</h5>
                <h5>Nickname: {details[0].nickname}</h5>
                <h5>Status: {details[0].status}</h5>
                <h5>Appearance: {mapped}</h5>
-               <h2 className="quotes"><i class="fas fa-quote-left"></i>  {quotes?quotes[0].quote:"no quote available"}<i class="fas fa-quote-right"></i>   </h2>
+               <h3 className="quotes"><i class="fas fa-quote-left"></i> {quotes[0].quote} <i class="fas fa-quote-right"></i>   </h3>
                </div>
            </div>
            

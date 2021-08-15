@@ -15,12 +15,14 @@ if(loading){return(<CircularProgress size={100}/>)}
   return(
      
     <div className="container">
+
+
         {chars.map((char,i)=>(
            <div key={i} className="box">
                
-           <Link className="link" to={`/details/${char.char_id}`}><img src={char.img} alt="" /></Link>
+            <Link className="link" to={`/details/${char.char_id}`}><img src={char.img} alt="" /></Link>
            
-           <div className="info">
+            <div className="info">
            <Link to={`/details/${char.char_id}`}> <h4>{char.name}</h4></Link>
                
                <h5>DOB:{char.birthday}</h5>
@@ -28,6 +30,7 @@ if(loading){return(<CircularProgress size={100}/>)}
                <p>Status:{char.status}</p>
            </div>
            </div>
+           
         ))}
         
         
